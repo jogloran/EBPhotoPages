@@ -195,13 +195,10 @@
 
 - (void)photoPagesController:(EBPhotoPagesController *)controller didSelectActivityButton:(id)sender
 {
-    EBPhotoViewController *photoViewController = [controller currentPhotoViewController];
-    id senderItem = nil;
-    if ([sender isKindOfClass:[UIBarButtonItem class]]) {
-        senderItem = sender;
-    }
-    [controller presentActivitiesForPhotoViewController:photoViewController fromBarButtonItem:senderItem];
+    EBPhotoViewController *photoViewController = [controller currentPhotoViewController];    
+    [controller presentActivitiesForPhotoViewController:photoViewController];
 }
+
 
 - (void)photoPagesController:(EBPhotoPagesController *)controller
    didSelectToggleTagsButton:(id)sender
@@ -391,12 +388,6 @@
 
 - (void)photoPagesController:(EBPhotoPagesController *)controller
      didSelectCommentsButton:(id)sender
-{
-    [controller enterBrowsingMode];
-}
-
-- (void)photoPagesController:(EBPhotoPagesController *)controller
-       didSelectCancelButton:(id)sender
 {
     [controller enterBrowsingMode];
 }

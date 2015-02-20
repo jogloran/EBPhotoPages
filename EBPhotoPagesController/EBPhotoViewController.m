@@ -80,7 +80,8 @@ static NSString *TagPopoversKeyPath = @"tagPopovers";
     [self setPhotoView:newPhotoScrollView];
     [mainView addSubview:newPhotoScrollView];
     
-    [self loadCommentsView];
+    // DT:
+//    [self loadCommentsView];
     
     [self beginObservations];
 }

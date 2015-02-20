@@ -35,7 +35,6 @@
 @property (nonatomic, readonly) UIBarButtonItem *miscBarButtonItem;
 @property (nonatomic, readonly) UIBarButtonItem *commentsBarButtonItem;
 @property (nonatomic, readonly) UIBarButtonItem *commentsExitBarButtonItem;
-@property (nonatomic, readonly) UIBarButtonItem *hideCommentsBarButtonItem;
 @property (nonatomic, readonly) UIBarButtonItem *toggleTagsBarButtonItem;
 
 
@@ -100,7 +99,7 @@
 - (void)deletePhotoAtIndex:(NSInteger)index;
 - (void)deleteTagPopover:(EBTagPopover *)tagPopover inPhotoAtIndex:(NSInteger)index;
 
-- (void)presentActivitiesForPhotoViewController:(EBPhotoViewController *)photoViewController fromBarButtonItem:(UIBarButtonItem *)barButtonItem;
+- (void)presentActivitiesForPhotoViewController:(EBPhotoViewController *)photoViewController;
 - (void)cancelCurrentTagging;
 
 - (void)startCommenting;
