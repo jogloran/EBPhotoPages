@@ -75,6 +75,13 @@ shouldHandleLongPressGesture:(UILongPressGestureRecognizer *)recognizer
                 imageAtIndex:(NSInteger)index
            completionHandler:(void(^)(UIImage *image))handler;
 
+- (id) photoPagesController: (EBPhotoPagesController*)c paramsAtIndex: (NSInteger) index;
+
+- (void)photoPagesController:(EBPhotoPagesController *)controller
+                imageAtIndex:(NSInteger)index
+                      params: (id) params
+           completionHandler:(void(^)(UIImage *image))handler;
+
 //Default value is FALSE
 - (BOOL)photoPagesController:(EBPhotoPagesController *)photoPagesController
     shouldAllowDeleteForPhotoAtIndex:(NSInteger)index;

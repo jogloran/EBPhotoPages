@@ -94,22 +94,31 @@
 - (void)loadData
 {
     
-    if([self.dataSource respondsToSelector:@selector(photoPagesController:imageAtIndex:)]){
+    if ([self.dataSource respondsToSelector:
+         @selector(photoPagesController:paramsAtIndex:)] &&
+        [self.dataSource respondsToSelector:
+         @selector(photoPagesController:imageAtIndex:params:completionHandler:)]) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            id params = [self.dataSource photoPagesController:self.photoPagesController paramsAtIndex: self.photoViewController.photoIndex];
+            
+            dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                [self.dataSource photoPagesController:self.photoPagesController
+                                         imageAtIndex:self.photoViewController.photoIndex
+                                               params: params
+                                    completionHandler:^(UIImage *image){
+                                        
+                                        [self.photoViewController performSelectorOnMainThread:@selector(setImage:)
+                                                                                   withObject:image
+                                                                                waitUntilDone:YES];
+                                    }];
+            });
+
+        });
+    } else if ([self.dataSource respondsToSelector:@selector(photoPagesController:imageAtIndex:)]){
         [self performSelectorOnMainThread:@selector(loadImageOnMainThread)
                                withObject:nil
                             waitUntilDone:NO];
         
-    } else if ([self.dataSource respondsToSelector:
-                @selector(photoPagesController:imageAtIndex:completionHandler:)]){
-        
-        [self.dataSource photoPagesController:self.photoPagesController
-                                 imageAtIndex:self.photoViewController.photoIndex
-                            completionHandler:^(UIImage *image){
-            
-            [self.photoViewController performSelectorOnMainThread:@selector(setImage:)
-                                                       withObject:image
-                                                    waitUntilDone:YES];
-        }];
     }
 }
 

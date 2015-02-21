@@ -447,9 +447,9 @@ static NSString *kActionSheetIndexKey= @"actionSheetTargetIndex";
 
 - (void)loadScreenDimmer
 {
-    EBShadedView *dimView = [self.photoPagesFactory  screenDimmerForPhotoPagesController:self];
-    [self.view addSubview:dimView];
-    [self setScreenDimmer:dimView];
+//    EBShadedView *dimView = [self.photoPagesFactory  screenDimmerForPhotoPagesController:self];
+//    [self.view addSubview:dimView];
+//    [self setScreenDimmer:dimView];
 }
 
 - (void)loadUpperToolbar
@@ -468,16 +468,16 @@ static NSString *kActionSheetIndexKey= @"actionSheetTargetIndex";
 
 - (void)loadCaptionView
 {
-    EBCaptionView *captionView = [self.photoPagesFactory captionViewForPhotoPagesController:self];
-    [self.view addSubview:captionView];
-    [self setCaptionView:captionView];
+//    EBCaptionView *captionView = [self.photoPagesFactory captionViewForPhotoPagesController:self];
+//    [self.view addSubview:captionView];
+//    [self setCaptionView:captionView];
 }
 
 - (void)loadTaggingLabel
 {
-    UILabel *taggingLabel = [self.photoPagesFactory taggingLabelForPhotoPagesController:self];
-    [self.view addSubview:taggingLabel];
-    [self setTaggingLabel:taggingLabel];
+//    UILabel *taggingLabel = [self.photoPagesFactory taggingLabelForPhotoPagesController:self];
+//    [self.view addSubview:taggingLabel];
+//    [self setTaggingLabel:taggingLabel];
 }
 
 
