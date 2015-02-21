@@ -431,18 +431,18 @@ static NSString *kActionSheetIndexKey= @"actionSheetTargetIndex";
 
 - (void)loadUpperGradient
 {
-    EBShadedView *upperGradient = [self.photoPagesFactory
-                                   upperGradientViewForPhotoPagesController:self];
-    [self.view addSubview:upperGradient];
-    [self setUpperGradient:upperGradient];
+//    EBShadedView *upperGradient = [self.photoPagesFactory
+//                                   upperGradientViewForPhotoPagesController:self];
+//    [self.view addSubview:upperGradient];
+//    [self setUpperGradient:upperGradient];
 }
 
 - (void)loadLowerGradient
 {
-    EBShadedView *lowerGradient = [self.photoPagesFactory 
-                                    lowerGradientViewForPhotoPagesController:self];
-    [self.view addSubview:lowerGradient];
-    [self setLowerGradient:lowerGradient];
+//    EBShadedView *lowerGradient = [self.photoPagesFactory 
+//                                    lowerGradientViewForPhotoPagesController:self];
+//    [self.view addSubview:lowerGradient];
+//    [self setLowerGradient:lowerGradient];
 }
 
 - (void)loadScreenDimmer
@@ -493,11 +493,13 @@ static NSString *kActionSheetIndexKey= @"actionSheetTargetIndex";
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
     [self setStatusBarDisabled:YES withAnimation:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
+    [super viewWillDisappear:animated];
     [self setStatusBarDisabled:NO withAnimation:animated];
 }
 
